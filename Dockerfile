@@ -6,4 +6,4 @@ RUN mkdir -p /var/www
 COPY . /var/www
 WORKDIR /var/www
 RUN npm install
-ENTRYPOINT ["ng serve"]
+ENTRYPOINT ["ng", "serve", "--host=0.0.0.0"]
