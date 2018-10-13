@@ -1,0 +1,49 @@
+.card {
+  width: 100%;
+  height: 150px;
+  //border: 10px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  position: absolute;
+  backface-visibility: hidden;
+
+  &.back {
+    background: url("/assets/img/pokeball.png") center no-repeat blue;
+    background-size: 70%;
+    transform: rotateY(-180deg);
+  }
+
+  &.front {
+    background-color: lightgreen;
+
+    h2 {
+      text-transform: capitalize;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.flip-container {
+  width: 15%;
+  height: 150px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-container:hover .flip-card {
+  transform: rotateY(-180deg);
+}
+
